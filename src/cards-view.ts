@@ -587,7 +587,7 @@ export class VisualDashboardView extends ItemView {
 				};
 
 				// @ts-ignore - View Transitions API
-				if (activeDocument.startViewTransition) {
+				if (activeDocument.startViewTransition && !this.contentEl.querySelector('.neo-backdrop')) {
 					// @ts-ignore
 					activeDocument.startViewTransition(() => applyEmpty());
 				} else {
@@ -640,7 +640,7 @@ export class VisualDashboardView extends ItemView {
 			};
 
 			// @ts-ignore - Document View Transitions API
-			if (activeDocument.startViewTransition) {
+			if (activeDocument.startViewTransition && !this.contentEl.querySelector('.neo-backdrop')) {
 				// @ts-ignore
 				activeDocument.startViewTransition(() => applyDOM());
 			} else {
